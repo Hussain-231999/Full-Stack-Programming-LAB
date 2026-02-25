@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shopping Cart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Online Shopping Cart</h1>
+            <p>ES6 Rest, Spread & Destructuring</p>
+        </header>
+        
+        <div class="cart-info">
+            <div class="info-card">
+                <h3>Total Items</h3>
+                <p id="total-items">0</p>
+            </div>
+            <div class="info-card">
+                <h3>First Item</h3>
+                <p id="first-item">No items</p>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="products-section">
+                <h2>Available Products</h2>
+                <div id="products-list" class="products-grid">
+                    <!-- Products will be displayed here -->
+                </div>
+                <button id="add-products-btn" class="btn">Add Products to Cart</button>
+            </div>
+            
+            <div class="cart-section">
+                <h2>Shopping Cart</h2>
+                <div id="cart-display" class="cart-container">
+                    <!-- Cart will be displayed here -->
+                </div>
+                <div id="cart-clone-info" class="clone-info">
+                    <!-- Clone info will be displayed here -->
+                </div>
+            </div>
+        </div>
+
+        <div class="destructuring-section">
+            <h2>Array Destructuring Demo</h2>
+            <div id="destructuring-result" class="demo-result">
+                <!-- Destructuring results will be displayed here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

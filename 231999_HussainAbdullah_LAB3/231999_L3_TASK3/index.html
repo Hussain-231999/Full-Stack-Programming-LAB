@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronous Data Loader</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Asynchronous Data Loader</h1>
+            <p>Promise Simulation with .then() and .catch()</p>
+        </header>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label for="simulation-mode">Simulation Mode:</label>
+                <select id="simulation-mode">
+                    <option value="success">Success (Resolve)</option>
+                    <option value="error">Error (Reject)</option>
+                </select>
+            </div>
+            <button id="fetch-btn" class="btn btn-primary">Fetch Users</button>
+            <button id="reset-btn" class="btn btn-secondary">Reset</button>
+        </div>
+
+        <div id="loading" class="loading-container hidden">
+            <div class="spinner"></div>
+            <p>Loading data...</p>
+        </div>
+
+        <div id="error-message" class="error-container hidden">
+            <div class="error-icon">⚠️</div>
+            <h3>Error Loading Data</h3>
+            <p id="error-text"></p>
+        </div>
+
+        <div id="results-section" class="results-section hidden">
+            <h2>Fetched Users</h2>
+            <div id="users-container" class="users-grid">
+                <!-- Users will be displayed here -->
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h2>How It Works</h2>
+            <div class="info-cards">
+                <div class="info-card">
+                    <div class="info-icon">📦</div>
+                    <h3>Promise</h3>
+                    <p>Returns a Promise that represents the eventual completion of the operation</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">⏱️</div>
+                    <h3>setTimeout</h3>
+                    <p>Simulates 3-second server delay using asynchronous timing</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">✅</div>
+                    <h3>.then()</h3>
+                    <p>Handles successful resolution of the Promise</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">❌</div>
+                    <h3>.catch()</h3>
+                    <p>Handles any errors or rejection from the Promise</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="log-section">
+            <h2>Console Log</h2>
+            <div id="console-output" class="console-output">
+                <!-- Console logs will be displayed here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
