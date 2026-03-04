@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+}
+
+form {
+    width: 300px;
+    margin: auto;
+}
+
+.form_group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+
+input.error_input {
+    border-color: red;
+}
+
+input.valid_input {
+    border-color: green;
+}
+
+small {
+    color: red;
+    font-size: 12px;
+}
+
+button {
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+#success_message {
+    margin-top: 20px;
+    font-weight: bold;
+    color: green;
+}

@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h2>Registration Form</h2>
+
+    <form id="my_form">
+
+        <div class="form_group">
+            <input type="text" id="name" placeholder="Enter Name">
+            <small class="error"></small>
+        </div>
+
+        <div class="form_group">
+            <input type="email" id="email" placeholder="Enter Email">
+            <small class="error"></small>
+        </div>
+
+        <div class="form_group">
+            <input type="password" id="password" placeholder="Enter Password">
+            <small class="error"></small>
+        </div>
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+    <p id="success_message"></p>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.tabs {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.tab_btn {
+    background-color: white;
+    border: none;
+    padding: 8px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.tab_btn.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.content_section {
+    height: 100vh;
+    padding: 100px 20px 20px 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.content_section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#section1 { background-color: #f4f4f4; }
+#section2 { background-color: #e3f2fd; }
+#section3 { background-color: #fff3e0; }
+#section4 { background-color: #e8f5e9; }
