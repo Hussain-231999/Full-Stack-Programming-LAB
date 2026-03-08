@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shopping Cart – HotSpring Portable Spas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+<div id="site-header"></div>
+<div class="page-hero" style="min-height:auto;padding:24px 0 40px;">
+  <div class="container">
+    <nav class="breadcrumb"><a href="index.html">Home</a><span>›</span><span>Shopping Cart</span></nav>
+    <div class="section-heading" style="color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.5);">Shopping Cart</div>
+    <div class="content-box">
+      <div class="sub-heading">Your Shopping Cart</div>
+      <div class="cart-alert"><i class="fa-solid fa-circle-check"></i> The Cabaret 3 Person 41 Jet Hot Tub-110 Volt Plug in <strong style="margin:0 4px;">was just added cart.</strong></div>
+      <div style="display:flex;justify-content:space-between;font-size:.78rem;color:#555;margin-bottom:8px;">
+        <span>Items added: <a href="my-account.html" style="color:#2563eb;">user_name</a></span>
+        <span>Items total</span>
+      </div>
+      <table class="cart-table" id="cartTable">
+        <thead>
+          <tr>
+            <th style="width:60px;"></th>
+            <th>Product</th>
+            <th>Shipping</th>
+            <th>Quantity</th>
+            <th style="text-align:right;">Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img src="https://images.unsplash.com/photo-1596178065887-1198b6148b2b?w=120&q=70" alt="Product"/></td>
+            <td>
+              <div class="cart-item-title">The Cabaret 3 Person 41 Jet Hot Tub-110 Volt Plug in or 220 Volt Version</div>
+              <div class="cart-item-desc">220 V/50 AMP – 4.5KW Heater 110 V/15 AMP – 1KW Heater/<br>convertible To 220 V / 4kW Heater</div>
+              <div class="cart-links"><a href="#" class="btn-remove-item">Remove</a><a href="product.html">Edit Your Order</a></div>
+            </td>
+            <td style="font-size:.78rem;color:#555;">Standard (7 - 10 business days)</td>
+            <td><select class="qty-select" aria-label="Quantity"><option>1</option><option selected>10</option><option>15</option><option>20</option></select></td>
+            <td style="text-align:right;font-size:.85rem;font-weight:600;" class="item-total"><span class="item-unit-price" data-price="9.00">$9.00</span></td>
+          </tr>
+          <tr>
+            <td><img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=120&q=70" alt="Product"/></td>
+            <td>
+              <div class="cart-item-title">The Cabaret 3 Person 41 Jet Hot Tub-110 Volt Plug in or 220 Volt Version</div>
+              <div class="cart-item-desc">220 V/50 AMP – 4.5KW Heater 110 V/15 AMP – 1KW Heater/<br>convertible To 220 V / 4kW Heater</div>
+              <div class="cart-links"><a href="#" class="btn-remove-item">Remove</a><a href="product.html">Edit Your Order</a></div>
+            </td>
+            <td style="font-size:.78rem;color:#555;">Standard (7 - 10 business days)</td>
+            <td><select class="qty-select" aria-label="Quantity"><option>1</option><option selected>10</option><option>15</option></select></td>
+            <td style="text-align:right;font-size:.85rem;font-weight:600;" class="item-total">$9.00</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="cart-summary">
+        <div class="cart-total">Cart summary (<span class="cart-item-count">2 items</span>)<br>Total: <span class="cart-total-amount">$21.00</span></div>
+        <div style="display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap;">
+          <a href="category.html" class="btn btn-gray">CONTINUE SHOPPING</a>
+          <a href="checkout.html" class="btn btn-red">PROCEED TO CHECKOUT</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="site-carousel"></div>
+<div id="site-brand"></div>
+<div id="site-footer"></div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+$(function(){
+  $('#site-header').html(HS.layout.header());
+  $('#site-carousel').html(HS.layout.viewedCarousel());
+  $('#site-brand').html(HS.layout.brandStrip());
+  $('#site-footer').html(HS.layout.footer());
+  HS.layout.init();
+});
+</script>
+</body>
+</html>

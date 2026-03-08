@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Edit Billing Address – HotSpring Portable Spas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+<div id="site-header"></div>
+<div class="page-hero" style="min-height:auto;padding:24px 0 40px;">
+  <div class="container">
+    <nav class="breadcrumb"><a href="index.html">Home</a><span>›</span><a href="my-account.html">User Account</a><span>›</span><span>My Account</span></nav>
+    <div class="section-heading" style="color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.5);">Edit Billing Address</div>
+    <div class="content-box" style="max-width:620px;">
+      <div id="successBanner" class="success-banner" style="display:none;"><i class="fa-solid fa-circle-check" style="color:#16a34a;margin-right:6px;"></i>Details updated successfully!</div>
+      <form id="editBillingForm" novalidate>
+      <p class="field-note">Please fill the form below to update your Profile details.</p>
+      <p class="field-note">*Required Fields</p>
+      <div class="form-row"><label>First Name <span class="req">*</span></label><div class="field"><input type="text" id="bFirst" class="form-control" value="Hussain"/><div class="error-msg" id="bFirstErr">Required.</div></div></div>
+      <div class="form-row"><label>Last Name <span class="req">*</span></label><div class="field"><input type="text" id="bLast" class="form-control" value="Abdullah"/><div class="error-msg" id="bLastErr">Required.</div></div></div>
+      <div class="form-row"><label>Email <span class="req">*</span></label><div class="field"><input type="email" id="bEmail" class="form-control" value="user11@gmail.com"/><div class="error-msg" id="bEmailErr">Valid email required.</div></div></div>
+      <div class="form-row"><label>Phone <span class="req">*</span></label><div class="field"><input type="tel" id="bPhone" class="form-control" value="888-201-8899"/><div class="error-msg" id="bPhoneErr">Required.</div></div></div>
+      <div class="form-row"><label>City <span class="req">*</span></label><div class="field"><input type="text" id="bCity" class="form-control" value="California"/><div class="error-msg" id="bCityErr">Required.</div></div></div>
+      <div class="form-row"><label>State <span class="req">*</span></label><div class="field"><input type="text" id="bState" class="form-control" value="CA"/><div class="error-msg" id="bStateErr">Required.</div></div></div>
+      <div class="form-row"><label>Zip Code <span class="req">*</span></label><div class="field"><input type="text" id="bZip" class="form-control" value="20112"/><div class="error-msg" id="bZipErr">Valid zip required.</div></div></div>
+      <div class="form-row"><label>Country <span class="req">*</span></label><div class="field"><input type="text" id="bCountry" class="form-control" value="United State"/><div class="error-msg" id="bCountryErr">Required.</div></div></div>
+      <div style="margin-left:160px;margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;">
+        <button type="submit" class="btn btn-red">UPDATE ADDRESS</button>
+        <a href="my-account.html" class="btn btn-gray">BACK</a>
+      </div></form>
+    </div>
+  </div>
+</div>
+<div id="site-brand"></div>
+<div id="site-footer"></div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+$(function(){
+  $('#site-header').html(HS.layout.header());
+  $('#site-brand').html(HS.layout.brandStrip());
+  $('#site-footer').html(HS.layout.footer());
+  HS.layout.init();
+  $('#editBillingForm').on('submit',function(e){
+    e.preventDefault();
+    var ok=true;
+    $(this).find('input[type=text],input[type=email],input[type=tel],input[type=password]').each(function(){
+      var id=$(this).attr('id'); var errId=id+'Err'; var val=$.trim($(this).val());
+      if(!val){ HS.showError(id,errId,'This field is required.'); ok=false; } else HS.clearError(id,errId);
+    });
+    if(ok){ $('#successBanner').show(); $('html,body').animate({scrollTop:0},400); }
+  });
+});
+</script>
+</body>
+</html>

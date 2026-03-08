@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Create Account – HotSpring Portable Spas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+<div id="site-header"></div>
+<div class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb"><a href="index.html">Home</a><span>›</span><span>Register</span></nav>
+    <div class="section-heading" style="color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.5);">Create New Account</div>
+    <div class="content-box" style="max-width:600px;">
+      <div class="sub-heading">User Account Details</div>
+      <p class="field-note">To create a new account, please fill in the required information below. Passwords are case sensitive and must be 6 to 20 characters long.</p>
+      <p class="field-note">*Required Fields</p>
+      <form id="registerForm" novalidate>
+        <div class="form-row"><label>Email Address <span class="req">*</span></label><div class="field"><input type="email" id="regEmail" class="form-control" autocomplete="email"/><div class="error-msg" id="regEmailErr">Please enter a valid email address.</div></div></div>
+        <div class="form-row"><label>Password <span class="req">*</span></label><div class="field"><input type="password" id="regPass" class="form-control" autocomplete="new-password"/><div class="error-msg" id="regPassErr">Password must be 6–20 characters.</div></div></div>
+        <div class="form-row"><label>Re-enter Password <span class="req">*</span></label><div class="field"><input type="password" id="regPass2" class="form-control" autocomplete="new-password"/><div class="error-msg" id="regPass2Err">Passwords do not match.</div></div></div>
+        <div class="form-row"><label>First Name <span class="req">*</span></label><div class="field"><input type="text" id="regFirst" class="form-control" autocomplete="given-name"/><div class="error-msg" id="regFirstErr">First name is required.</div></div></div>
+        <div class="form-row"><label>Last Name <span class="req">*</span></label><div class="field"><input type="text" id="regLast" class="form-control" autocomplete="family-name"/><div class="error-msg" id="regLastErr">Last name is required.</div></div></div>
+        <div style="margin:12px 0 18px 160px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+          <input type="checkbox" id="newsletter" style="width:15px;height:15px;accent-color:#cc0000;"/>
+          <label for="newsletter" style="font-size:.8rem;color:#555;cursor:pointer;">Yes, I want to receive email about new products and specials!</label>
+        </div>
+        <div style="margin-left:160px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+          <button type="submit" class="btn btn-red">CREATE ACCOUNT</button>
+          <a href="forgot-password.html" style="font-size:.82rem;color:#2563eb;">Forgot your password?</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div id="site-brand"></div>
+<div id="site-footer"></div>
+<!-- Success Modal -->
+<div id="successModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:9999;align-items:center;justify-content:center;">
+  <div style="background:#fff;border-radius:4px;padding:36px;max-width:340px;width:90%;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,.2);">
+    <div style="color:#16a34a;font-size:3rem;margin-bottom:12px;"><i class="fa-solid fa-circle-check"></i></div>
+    <h2 style="font-family:'Oswald',sans-serif;font-size:1.5rem;margin-bottom:8px;">Account Created!</h2>
+    <p style="font-size:.85rem;color:#555;margin-bottom:20px;">Welcome! Your account has been created. You can now sign in.</p>
+    <a href="login.html" class="btn btn-red">SIGN IN NOW</a>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+$(function(){
+  $('#site-header').html(HS.layout.header());
+  $('#site-brand').html(HS.layout.brandStrip());
+  $('#site-footer').html(HS.layout.footer());
+  HS.layout.init();
+
+  // Live clear
+  ['regEmail','regPass','regPass2','regFirst','regLast'].forEach(function(id){
+    $('#'+id).on('input', function(){ $(this).removeClass('error'); $('#'+id+'Err').hide(); });
+  });
+
+  $('#registerForm').on('submit', function(e){
+    e.preventDefault();
+    var ok = true;
+    var email=$.trim($('#regEmail').val()), pass=$('#regPass').val(), pass2=$('#regPass2').val(),
+        first=$.trim($('#regFirst').val()), last=$.trim($('#regLast').val());
+    if(!HS.validate.email(email)){ HS.showError('regEmail','regEmailErr'); ok=false; } else HS.clearError('regEmail','regEmailErr');
+    if(pass.length<6||pass.length>20){ HS.showError('regPass','regPassErr'); ok=false; } else HS.clearError('regPass','regPassErr');
+    if(pass!==pass2||!pass2){ HS.showError('regPass2','regPass2Err'); ok=false; } else HS.clearError('regPass2','regPass2Err');
+    if(!first){ HS.showError('regFirst','regFirstErr'); ok=false; } else HS.clearError('regFirst','regFirstErr');
+    if(!last){ HS.showError('regLast','regLastErr'); ok=false; } else HS.clearError('regLast','regLastErr');
+    if(ok){ $('#successModal').css('display','flex'); this.reset(); }
+  });
+  $('#successModal').on('click', function(e){ if($(e.target).is('#successModal')) $(this).hide(); });
+});
+</script>
+</body>
+</html>

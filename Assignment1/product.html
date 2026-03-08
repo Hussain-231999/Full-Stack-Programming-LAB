@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Detail – HotSpring Portable Spas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+<div id="site-header"></div>
+<div class="page-hero" style="min-height:auto;padding:24px 0 40px;">
+  <div class="container">
+    <nav class="breadcrumb"><a href="index.html">Home</a><span>›</span><a href="category.html">Category</a><span>›</span><span>Product Detail</span></nav>
+    <div style="background:rgba(245,245,245,.97);border:1px solid #ddd;border-radius:2px;box-shadow:0 2px 12px rgba(0,0,0,.12);padding:20px;">
+      <!-- Product Title -->
+      <h1 style="font-family:'Oswald',sans-serif;font-size:1.3rem;font-weight:700;color:#111;margin-bottom:4px;">Emerald Bay XL TV DVD Stereo Hot Tub with 90 Jets</h1>
+      <p style="font-size:.72rem;color:#888;margin-bottom:16px;">Abt Model:B22CS3OSNS5 | UPC Code : B22225867725</p>
+
+      <div style="display:grid;grid-template-columns:1fr 260px 220px;gap:20px;" id="productDetailGrid">
+        <!-- Image Column -->
+        <div>
+          <div class="product-detail-img">
+            <img id="mainProductImg" src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=400&q=80" alt="Main product" style="width:100%;height:260px;object-fit:contain;"/>
+          </div>
+          <div class="thumb-gallery">
+            <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=120&q=70" alt="Thumb 1" class="active"/>
+            <img src="https://images.unsplash.com/photo-1596178065887-1198b6148b2b?w=120&q=70" alt="Thumb 2"/>
+            <img src="https://images.unsplash.com/photo-1531971589569-0d9370cbe1e5?w=120&q=70" alt="Thumb 3"/>
+            <img src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=120&q=70" alt="Thumb 4"/>
+          </div>
+          <a href="#" style="font-size:.78rem;color:#2563eb;margin-top:6px;display:inline-block;">+ Larger View</a>
+        </div>
+
+        <!-- Info Column -->
+        <div>
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div>
+            <a href="#tab-reviews" style="font-size:.75rem;color:#2563eb;">(4 reviews)</a>
+          </div>
+          <div style="font-size:.8rem;color:#555;text-decoration:line-through;margin-bottom:2px;">Retail Price: $2199.00</div>
+          <div style="font-size:.75rem;color:#cc0000;font-weight:600;margin-bottom:4px;">Sale price</div>
+          <div style="font-family:'Oswald',sans-serif;font-size:2rem;color:#cc0000;font-weight:700;margin-bottom:4px;">$1979.00</div>
+          <div style="font-size:.72rem;color:#2563eb;margin-bottom:14px;">Low Price Guarantee</div>
+          <div style="font-size:.8rem;color:#333;line-height:1.8;margin-bottom:14px;">
+            <strong>Size/Seating Capacity</strong><br>77", 77", 32" / 6 Persons<br>
+            <strong>Seating Design</strong><br>Bucket, Lounge, Chair, Bench<br>
+            <strong>Water Capacity / Dry Weight</strong><br>305 Gallons / 573 lbs<br>
+            <strong>Number of Pumps</strong><br>2 X 5HP<br>
+            <strong>Electrical</strong><br>5.5 KW Heavy Heater, 220V, 50 amp /ETL Certificate
+          </div>
+          <div style="font-size:.8rem;color:#16a34a;font-weight:600;margin-bottom:14px;"><i class="fa-solid fa-circle-check"></i> In Stock (available)</div>
+          <button class="btn btn-red btn-lg" onclick="window.location.href='cart.html'"><i class="fa-solid fa-cart-shopping"></i> ADD TO CART</button>
+        </div>
+
+        <!-- Price Calculator -->
+        <div>
+          <div class="price-calculator">
+            <h4>Price Calculator</h4>
+            <input type="hidden" id="basePrice" value="1979"/>
+            <div class="calc-row">Interior Color:<br><select class="calc-select"><option value="0">Standard</option><option value="50">Premium (+$50)</option></select></div>
+            <div class="calc-row">Outside Shell Color:<br><select class="calc-select"><option value="0">Standard</option><option value="75">Custom (+$75)</option></select></div>
+            <div class="calc-row">Circulation Pump:<br><select class="calc-select"><option value="0">None</option><option value="120">Add (+$120)</option></select></div>
+            <div class="calc-row">Polar Foam:<br><select class="calc-select"><option value="0">Standard</option><option value="80">Premium (+$80)</option></select></div>
+            <div class="calc-row">Cover / Steps:<br><select class="calc-select"><option value="0">None</option><option value="200">Add Cover (+$200)</option></select></div>
+            <div class="calc-row">TV/DVD/Entertainment:<br><select class="calc-select"><option value="0">None</option><option value="350">Add (+$350)</option></select></div>
+            <div class="calc-row">Jets:<br><select class="calc-select"><option value="0">Standard</option><option value="150">Premium (+$150)</option></select></div>
+            <div class="calc-row">Quantity:<br><input type="number" id="calcQty" value="1" min="1" max="99" style="width:60px;border:1px solid #ccc;border-radius:2px;padding:4px 6px;font-size:.8rem;"/></div>
+            <div class="total-price">Total Price: <span id="calcTotal">$650.00</span></div>
+            <button class="btn btn-red" style="width:100%;" onclick="window.location.href='cart.html'"><i class="fa-solid fa-cart-shopping"></i> ADD TO CART</button>
+          </div>
+          <div style="margin-top:16px;">
+            <div style="font-family:'Oswald',sans-serif;font-size:.85rem;color:#333;margin-bottom:8px;border-bottom:1px solid #ddd;padding-bottom:4px;">Download Resources</div>
+            <div class="download-list">
+              <a href="#"><i class="fa-solid fa-file-pdf" style="color:#cc0000;margin-right:4px;"></i> Full Line Brochure</a>
+              <a href="#"><i class="fa-solid fa-file-pdf" style="color:#cc0000;margin-right:4px;"></i> Owner's Manual</a>
+              <a href="#"><i class="fa-solid fa-file-pdf" style="color:#cc0000;margin-right:4px;"></i> Specifications Sheet</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div style="margin-top:24px;">
+        <div class="product-tabs">
+          <button class="tab-btn active" data-tab="details">Details</button>
+          <button class="tab-btn" data-tab="specs">Quick Specs</button>
+          <button class="tab-btn" data-tab="accessories">Accessories</button>
+          <button class="tab-btn" data-tab="reviews">Reviews</button>
+          <button class="tab-btn" data-tab="qa">Q &amp; A</button>
+        </div>
+        <div id="tab-details" class="tab-content active" style="font-size:.82rem;color:#444;line-height:1.8;padding:10px 0;">
+          <strong style="display:block;margin-bottom:8px;">Product Details</strong>
+          <p>Energy Star Rated - No</p>
+          <p><strong>Emerald Bay XL TV DVD Stereo Hot Tub with 90 Jets</strong></p>
+          <p>The Hottub B22CS30SNS, stain</p>
+        </div>
+        <div id="tab-specs" class="tab-content" style="font-size:.82rem;color:#444;line-height:2;padding:10px 0;">
+          <table style="width:100%;border-collapse:collapse;font-size:.8rem;">
+            <tr style="border-bottom:1px solid #eee;"><td style="padding:6px 10px;color:#888;width:200px;">Model</td><td style="padding:6px 10px;">B22CS30SNS5</td></tr>
+            <tr style="border-bottom:1px solid #eee;"><td style="padding:6px 10px;color:#888;">Dimensions</td><td style="padding:6px 10px;">77" × 77" × 32"</td></tr>
+            <tr style="border-bottom:1px solid #eee;"><td style="padding:6px 10px;color:#888;">Capacity</td><td style="padding:6px 10px;">6 Persons</td></tr>
+            <tr style="border-bottom:1px solid #eee;"><td style="padding:6px 10px;color:#888;">Water Capacity</td><td style="padding:6px 10px;">305 Gallons</td></tr>
+            <tr style="border-bottom:1px solid #eee;"><td style="padding:6px 10px;color:#888;">Heater</td><td style="padding:6px 10px;">5.5 KW Heavy Heater</td></tr>
+            <tr><td style="padding:6px 10px;color:#888;">Electrical</td><td style="padding:6px 10px;">220V, 50 amp /ETL Certificate</td></tr>
+          </table>
+        </div>
+        <div id="tab-accessories" class="tab-content" style="font-size:.82rem;color:#444;padding:10px 0;">
+          <p>Accessories for this model include spa covers, steps, chemical kits, and entertainment systems. Contact us for details.</p>
+        </div>
+        <div id="tab-reviews" class="tab-content" style="font-size:.82rem;color:#444;padding:10px 0;">
+          <p><strong>4 Reviews</strong></p>
+          <div style="border-bottom:1px solid #eee;padding:10px 0;"><div class="stars" style="font-size:.8rem;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p style="margin-top:4px;">Excellent product, very happy with our purchase!</p><p style="color:#aaa;font-size:.72rem;">– John D., December 2014</p></div>
+          <div style="padding:10px 0;"><div class="stars" style="font-size:.8rem;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div><p style="margin-top:4px;">Great quality, delivery was on time.</p><p style="color:#aaa;font-size:.72rem;">– Sarah M., January 2015</p></div>
+        </div>
+        <div id="tab-qa" class="tab-content" style="font-size:.82rem;color:#444;padding:10px 0;">
+          <p><strong>Q:</strong> Is this ETL certified?<br><strong>A:</strong> Yes, this model comes with full ETL certification.</p>
+          <p style="margin-top:10px;"><strong>Q:</strong> What is the warranty?<br><strong>A:</strong> 5 years on shell, 2 years on equipment, 1 year on labor.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="site-carousel"></div>
+<div id="site-brand"></div>
+<div id="site-footer"></div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+$(function(){
+  $('#site-header').html(HS.layout.header());
+  $('#site-carousel').html(HS.layout.viewedCarousel());
+  $('#site-brand').html(HS.layout.brandStrip());
+  $('#site-footer').html(HS.layout.footer());
+  HS.layout.init();
+  function fixProductGrid(){
+    if($(window).width()<600){ $('#productDetailGrid').css('grid-template-columns','1fr'); }
+    else if($(window).width()<900){ $('#productDetailGrid').css('grid-template-columns','1fr 1fr'); }
+    else { $('#productDetailGrid').css('grid-template-columns','1fr 260px 220px'); }
+  }
+  fixProductGrid(); $(window).on('resize',fixProductGrid);
+});
+</script>
+</body>
+</html>

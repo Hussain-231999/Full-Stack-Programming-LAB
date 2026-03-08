@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us – HotSpring Portable Spas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+<div id="site-header"></div>
+<div class="page-hero" style="min-height:auto;padding:24px 0 40px;">
+  <div class="container">
+    <nav class="breadcrumb"><a href="index.html">Home</a><span>›</span><a href="contact.html">Customer Support</a><span>›</span><span>Contact Us</span></nav>
+    <div class="section-heading" style="color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.5);">Contact Us</div>
+    <div class="content-box">
+
+      <!-- Support header -->
+      <div class="sub-heading">Contact Our Customer Support</div>
+      <p class="field-note">To create a new account, please fill in the required information below. Passwords are case sensitive and must be 6 to 20 characters long.</p>
+
+      <div style="margin:16px 0;font-size:.85rem;color:#333;">
+        <strong>Online Sales &amp; Customer Support</strong><br>
+        <span style="color:#555;">Call Us: 020 78989845</span>
+      </div>
+
+      <!-- Locations -->
+      <div style="display:grid;grid-template-columns:1fr 1px 1fr;gap:0;border:1px solid #e0e0e0;border-radius:2px;overflow:hidden;margin-bottom:24px;" id="locationsGrid">
+        <div style="padding:16px;">
+          <div style="font-family:'Oswald',sans-serif;font-size:.9rem;color:#333;margin-bottom:8px;">Retail Store Location</div>
+          <div style="font-size:.8rem;color:#555;line-height:1.8;">
+            Hottub Store Loc.<br>
+            5000N, Ford avenue<br>
+            Newyourk, NY 20145<br>
+            888.123.1234
+          </div>
+        </div>
+        <div style="background:#e0e0e0;"></div>
+        <div style="padding:16px;">
+          <div style="font-family:'Oswald',sans-serif;font-size:.9rem;color:#333;margin-bottom:8px;">Services</div>
+          <div style="font-size:.8rem;color:#555;line-height:1.8;">
+            Hottub Store Loc.<br>
+            5000N, Ford avenue<br>
+            Newyourk, NY 20145<br>
+            888.123.1234
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="sub-heading">Contact Us</div>
+      <div id="contactSuccess" class="success-banner" style="display:none;"><i class="fa-solid fa-circle-check" style="color:#16a34a;margin-right:6px;"></i>Your message has been sent! We'll get back to you within 24 hours.</div>
+      <form id="contactForm" novalidate style="max-width:500px;">
+        <div class="form-row"><label>First name <span class="req">*</span></label><div class="field"><input type="text" id="ctFirst" class="form-control"/><div class="error-msg" id="ctFirstErr">First name is required.</div></div></div>
+        <div class="form-row"><label>Email <span class="req">*</span></label><div class="field"><input type="email" id="ctEmail" class="form-control"/><div class="error-msg" id="ctEmailErr">Valid email is required.</div></div></div>
+        <div class="form-row"><label>Subject <span class="req">*</span></label><div class="field"><input type="text" id="ctSubject" class="form-control"/><div class="error-msg" id="ctSubjectErr">Subject is required.</div></div></div>
+        <div class="form-row" style="align-items:flex-start;"><label style="padding-top:6px;">Your Message</label><div class="field"><textarea id="ctMessage" class="form-control" rows="6" placeholder="Type your message here..."></textarea></div></div>
+        <div style="margin-left:160px;margin-top:14px;"><button type="submit" class="btn btn-red">SUBMIT</button></div>
+      </form>
+
+    </div>
+  </div>
+</div>
+<div id="site-brand"></div>
+<div id="site-footer"></div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+$(function(){
+  $('#site-header').html(HS.layout.header());
+  $('#site-brand').html(HS.layout.brandStrip());
+  $('#site-footer').html(HS.layout.footer());
+  HS.layout.init();
+
+  function fixLocGrid(){ $('#locationsGrid').css('grid-template-columns', $(window).width()<600?'1fr':'1fr 1px 1fr'); }
+  fixLocGrid(); $(window).on('resize',fixLocGrid);
+
+  ['ctFirst','ctEmail','ctSubject'].forEach(function(id){
+    $('#'+id).on('input',function(){ $(this).removeClass('error'); $('#'+id+'Err').hide(); });
+  });
+
+  $('#contactForm').on('submit', function(e){
+    e.preventDefault(); var ok=true;
+    if(!HS.validate.required($('#ctFirst').val())){ HS.showError('ctFirst','ctFirstErr'); ok=false; } else HS.clearError('ctFirst','ctFirstErr');
+    if(!HS.validate.email($('#ctEmail').val())){ HS.showError('ctEmail','ctEmailErr'); ok=false; } else HS.clearError('ctEmail','ctEmailErr');
+    if(!HS.validate.required($('#ctSubject').val())){ HS.showError('ctSubject','ctSubjectErr'); ok=false; } else HS.clearError('ctSubject','ctSubjectErr');
+    if(ok){ $('#contactSuccess').show(); this.reset(); $('html,body').animate({scrollTop:$('#contactSuccess').offset().top-80},400); }
+  });
+});
+</script>
+</body>
+</html>

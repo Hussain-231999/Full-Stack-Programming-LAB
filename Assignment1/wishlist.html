@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Wishlist – HotSpring Portable Spas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+<div id="site-header"></div>
+<div class="page-hero" style="min-height:auto;padding:24px 0 40px;">
+  <div class="container">
+    <nav class="breadcrumb"><a href="index.html">Home</a><span>›</span><span>My Wishlist</span></nav>
+    <div class="section-heading" style="color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.5);">My Wishlist</div>
+    <div class="content-box">
+      <div class="sub-heading">Saved Items</div>
+      <table class="cart-table" id="wishlistTable">
+        <thead>
+          <tr><th style="width:60px;"></th><th>Product</th><th>Price</th><th>Actions</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=120&q=70" alt="Product"/></td>
+            <td><div class="cart-item-title"><a href="product.html">XS SCYBA X SERIES 119</a></div><div class="cart-item-desc">Portable Spa · 5-7 Person</div></td>
+            <td style="font-size:.9rem;color:#cc0000;font-family:'Oswald',sans-serif;font-weight:700;">$500.00</td>
+            <td>
+              <button class="btn-add-cart" style="width:auto;padding:6px 14px;margin-bottom:4px;"><i class="fa-solid fa-cart-shopping"></i> ADD TO CART</button>
+              <a href="#" class="btn-remove-item" style="display:block;font-size:.72rem;color:#cc0000;margin-top:4px;">Remove</a>
+            </td>
+          </tr>
+          <tr>
+            <td><img src="https://images.unsplash.com/photo-1596178065887-1198b6148b2b?w=120&q=70" alt="Product"/></td>
+            <td><div class="cart-item-title"><a href="product.html">Emerald Bay XL TV DVD Stereo Hot Tub</a></div><div class="cart-item-desc">Premium Spa · 6 Person · TV/DVD</div></td>
+            <td style="font-size:.9rem;color:#cc0000;font-family:'Oswald',sans-serif;font-weight:700;">$1,979.00</td>
+            <td>
+              <button class="btn-add-cart" style="width:auto;padding:6px 14px;margin-bottom:4px;"><i class="fa-solid fa-cart-shopping"></i> ADD TO CART</button>
+              <a href="#" class="btn-remove-item" style="display:block;font-size:.72rem;color:#cc0000;margin-top:4px;">Remove</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;">
+        <a href="category.html" class="btn btn-gray">CONTINUE SHOPPING</a>
+        <a href="cart.html" class="btn btn-red">VIEW CART</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="site-brand"></div>
+<div id="site-footer"></div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+$(function(){
+  $('#site-header').html(HS.layout.header());
+  $('#site-brand').html(HS.layout.brandStrip());
+  $('#site-footer').html(HS.layout.footer());
+  HS.layout.init();
+});
+</script>
+</body>
+</html>

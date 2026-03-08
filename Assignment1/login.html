@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login – HotSpring Portable Spas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+<div id="site-header"></div>
+<div class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb"><a href="index.html">Home</a><span>›</span><span>My Account</span></nav>
+    <div class="section-heading" style="color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.5);">Login Or Create Account</div>
+    <div class="content-box">
+      <div style="display:grid;grid-template-columns:1fr 1px 1fr;gap:0;" id="loginGrid">
+        <!-- Left: Login -->
+        <div style="padding-right:28px;">
+          <div class="sub-heading">User Login Details</div>
+          <p class="field-note">Please sign in below with your login information.</p>
+          <p class="field-note">*Required Fields</p>
+          <form id="loginForm" novalidate>
+            <div class="form-row"><label>Email <span class="req">*</span></label><div class="field"><input type="email" id="loginEmail" class="form-control" autocomplete="email"/><div class="error-msg" id="loginEmailErr">Please enter a valid email.</div></div></div>
+            <div class="form-row"><label>Password <span class="req">*</span></label><div class="field"><input type="password" id="loginPass" class="form-control" autocomplete="current-password"/><div class="error-msg" id="loginPassErr">Password is required.</div></div></div>
+            <div style="margin:10px 0 16px 160px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+              <input type="checkbox" id="remember" style="width:14px;height:14px;accent-color:#cc0000;"/>
+              <label for="remember" style="font-size:.8rem;color:#555;cursor:pointer;">Remember me next time I visit</label>
+            </div>
+            <div style="margin-left:160px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+              <button type="submit" class="btn btn-red">SIGN IN</button>
+              <a href="forgot-password.html" style="font-size:.82rem;color:#2563eb;">Forgot your password?</a>
+            </div>
+          </form>
+        </div>
+        <!-- Divider -->
+        <div class="divider-v"></div>
+        <!-- Right: New Customer -->
+        <div style="padding-left:28px;">
+          <div class="sub-heading">New Customer</div>
+          <p class="field-note">As a registered Abt.com customer you can:</p>
+          <ul style="font-size:.82rem;color:#555;padding-left:18px;margin-bottom:20px;line-height:2;">
+            <li>Store billing &amp; shipping information</li>
+            <li>Check your order status</li>
+            <li>Track your delivery Status</li>
+            <li>View your order history</li>
+          </ul>
+          <a href="register.html" class="btn btn-red">CREATE NEW ACCOUNT</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="site-carousel"></div>
+<div id="site-brand"></div>
+<div id="site-footer"></div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+$(function(){
+  $('#site-header').html(HS.layout.header());
+  $('#site-carousel').html(HS.layout.viewedCarousel());
+  $('#site-brand').html(HS.layout.brandStrip());
+  $('#site-footer').html(HS.layout.footer());
+  HS.layout.init();
+
+  function fixLoginGrid(){
+    if($(window).width()<700){ $('#loginGrid').css('grid-template-columns','1fr'); $('.divider-v').hide(); }
+    else { $('#loginGrid').css('grid-template-columns','1fr 1px 1fr'); $('.divider-v').show(); }
+  }
+  fixLoginGrid(); $(window).on('resize',fixLoginGrid);
+
+  ['loginEmail','loginPass'].forEach(function(id){ $('#'+id).on('input',function(){ $(this).removeClass('error'); $('#'+id+'Err').hide(); }); });
+  $('#loginForm').on('submit', function(e){
+    e.preventDefault(); var ok=true;
+    if(!HS.validate.email($('#loginEmail').val())){ HS.showError('loginEmail','loginEmailErr'); ok=false; } else HS.clearError('loginEmail','loginEmailErr');
+    if(!HS.validate.required($('#loginPass').val())){ HS.showError('loginPass','loginPassErr'); ok=false; } else HS.clearError('loginPass','loginPassErr');
+    if(ok) window.location.href='my-account.html';
+  });
+});
+</script>
+</body>
+</html>

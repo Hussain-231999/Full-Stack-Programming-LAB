@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us – HotSpring Portable Spas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+<div id="site-header"></div>
+<div class="page-hero" style="min-height:auto;padding:24px 0 40px;">
+  <div class="container">
+    <nav class="breadcrumb"><a href="index.html">Home</a><span>›</span><span>About Us</span></nav>
+    <div class="section-heading" style="color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.5);">About Us</div>
+    <div class="content-box">
+
+      <div class="sub-heading">Welcome to the Company</div>
+      <div style="display:grid;grid-template-columns:1fr 200px;gap:20px;margin-bottom:24px;" id="aboutIntroGrid">
+        <div style="font-size:.82rem;color:#444;line-height:1.8;">
+      </div>
+        <div><img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=300&q=80" alt="Spa showroom" style="width:100%;height:160px;object-fit:cover;border-radius:2px;border:1px solid #ddd;"/></div>
+      </div>
+
+      <div class="sub-heading">Our Company Members</div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;" id="teamGrid">
+        <div class="team-card">
+          <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=200&q=80" alt="Jennifer Lawrence"/>
+          <div class="team-name">Fatima Ali</div>
+          <div class="team-role">Business Consultant</div>
+        </div>
+        <div class="team-card">
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80" alt="Jennifer Lawrence"/>
+          <div class="team-name">Saif Abbasi</div>
+          <div class="team-role">Business Consultant</div>
+        </div>
+        <div class="team-card">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&q=80" alt="Jennifer Lawrence"/>
+          <div class="team-name">Ayesha Ali</div>
+          <div class="team-role">Business Consultant</div>
+        </div>
+        <div class="team-card">
+          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&q=80" alt="Jennifer Lawrence"/>
+          <div class="team-name">Ayza Ahmed</div>
+          <div class="team-role">Business Consultant</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div id="site-brand"></div>
+<div id="site-footer"></div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+$(function(){
+  $('#site-header').html(HS.layout.header());
+  $('#site-brand').html(HS.layout.brandStrip());
+  $('#site-footer').html(HS.layout.footer());
+  HS.layout.init();
+  function fixTeamGrid(){
+    var w=$(window).width();
+    $('#teamGrid').css('grid-template-columns', w<480?'1fr 1fr':w<768?'repeat(2,1fr)':'repeat(4,1fr)');
+    $('#aboutIntroGrid').css('grid-template-columns', w<600?'1fr':'1fr 200px');
+  }
+  fixTeamGrid(); $(window).on('resize',fixTeamGrid);
+});
+</script>
+</body>
+</html>

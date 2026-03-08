@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Order Summary – HotSpring Portable Spas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+<div id="site-header"></div>
+<div class="page-hero" style="min-height:auto;padding:24px 0 40px;">
+  <div class="container">
+    <nav class="breadcrumb"><a href="index.html">Home</a><span>›</span><a href="my-account.html">User Account</a><span>›</span><span>Order Summary</span></nav>
+    <div class="section-heading" style="color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.5);">Order Summary</div>
+    <div class="content-box">
+      <div class="success-banner"><i class="fa-solid fa-circle-check" style="color:#16a34a;margin-right:6px;"></i>Thank you, your order has been received.</div>
+
+      <!-- Order Info -->
+      <div class="sub-heading">Your Order Summary</div>
+      <div style="font-size:.82rem;color:#444;line-height:2;margin-bottom:16px;">
+        Order # : &nbsp; 0303<br>
+        Date : &nbsp; December 21 2014<br>
+        Total : &nbsp; 1 × $2500 = $2500
+      </div>
+      <p style="font-size:.8rem;color:#555;margin-bottom:20px;">Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won't be shipped until the funds have cleared in our account.</p>
+
+      <!-- Order Details Table -->
+      <div class="sub-heading">Your Order Details</div>
+      <table class="account-table" style="margin-bottom:20px;">
+        <thead><tr><th>Product</th><th>Quantity</th><th style="text-align:right;">Total</th></tr></thead>
+        <tbody>
+          <tr><td><a href="product.html" style="color:#2563eb;">Five person hottube spa with green light inside</a></td><td>1</td><td style="text-align:right;">$ 699.00</td></tr>
+          <tr><td><a href="product.html" style="color:#2563eb;">Five person hottube spa with green light inside</a></td><td>1</td><td style="text-align:right;">$ 699.00</td></tr>
+        </tbody>
+      </table>
+      <div style="text-align:right;font-size:.82rem;color:#444;line-height:2.2;border-top:1px solid #eee;padding-top:10px;margin-bottom:20px;">
+        Cart Subtotal: <strong style="display:inline-block;min-width:100px;text-align:right;">$ 1400.00</strong><br>
+        Shipping: <strong style="display:inline-block;min-width:100px;text-align:right;">Free Shipment</strong><br>
+        Payment method: <strong style="display:inline-block;min-width:100px;text-align:right;">Direct Bank Transfer</strong><br>
+        <span style="font-family:'Oswald',sans-serif;font-size:1rem;">Total with shipping: <strong style="display:inline-block;min-width:100px;text-align:right;">$ 1400.00</strong></span>
+      </div>
+
+      <!-- Bank Details -->
+      <div class="sub-heading">Your Bank Details</div>
+      <div style="font-size:.82rem;color:#444;line-height:2;margin-bottom:20px;">
+        Bank : &nbsp; Your Bank Name<br>
+        Acc# : &nbsp; 2014 2545 4524 5654<br>
+        BIC : &nbsp; 012476 541245641212
+      </div>
+
+      <!-- Customer / Billing / Shipping -->
+      <div class="order-info-grid">
+        <div class="order-info-card"><strong>Customer Details</strong>Customer Name &nbsp; Farrukh Javaid<br>Email &nbsp; email@hotubdirect.com<br>Phone &nbsp; 0888 7578 787</div>
+        <div class="order-info-card"><strong>Billing Address</strong>Farrukh Javaid<br>Hottub Spas<br>Plot 10 Tech Society<br>California, CA 20112<br>United State</div>
+        <div class="order-info-card"><strong>Shipping Address</strong>Farrukh Javaid<br>Hottub Spas<br>Plot 10 Tech Society<br>California, CA 20112<br>United State</div>
+      </div>
+
+      <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap;">
+        <a href="index.html" class="btn btn-gray">CONTINUE SHOPPING</a>
+        <a href="my-account.html" class="btn btn-red">MY ACCOUNT</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="site-brand"></div>
+<div id="site-footer"></div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+$(function(){
+  $('#site-header').html(HS.layout.header());
+  $('#site-brand').html(HS.layout.brandStrip());
+  $('#site-footer').html(HS.layout.footer());
+  HS.layout.init();
+});
+</script>
+</body>
+</html>

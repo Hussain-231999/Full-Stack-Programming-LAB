@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HotSpring Portable Spas – Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+  <style>
+    /* Hero slider specifics */
+    .hero-slider { background: #1a2535; }
+    .hero-slide { min-height: 320px; display: none; align-items: center; position: relative; overflow: hidden; }
+    .hero-slide.active { display: flex; }
+    .hero-slide-bg { position: absolute; inset: 0; background-size: cover; background-position: center; filter: brightness(.55); }
+    .hero-slide-content { position: relative; z-index: 2; padding: 40px 24px; max-width: 420px; }
+    .hero-title { font-family:'Oswald',sans-serif; font-size: 1.8rem; font-weight: 700; color: #cc0000; line-height: 1.2; margin-bottom: 8px; }
+    .hero-sub   { font-size: .82rem; color: #ddd; margin-bottom: 14px; line-height: 1.6; }
+    .hero-price { font-family:'Oswald',sans-serif; font-size: 2rem; color: #fff; font-weight: 700; margin-bottom: 14px; }
+    .pulse { animation: pulse .4s ease; }
+    @keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.08)} }
+  </style>
+</head>
+<body>
+
+<!-- UTIL BAR -->
+<div class="util-bar">
+  <div class="container" style="display:flex;justify-content:space-between;align-items:center;">
+    <span>Call for Customer support: <a href="tel:051 602289565" style="color:#cc0000;font-weight:600;">051 602289565</a></span>
+    <div style="display:flex;gap:16px;">
+      <a href="my-account.html">My Account</a>
+      <a href="wishlist.html">Wishlist</a>
+      <a href="checkout.html">To Checkout</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;">
+    <a href="index.html" style="text-decoration:none;">
+      <div class="logo-brand">HOTSPRING<sup style="font-size:.55rem;vertical-align:super;">®</sup></div>
+      <div class="logo-sub">Portable Spas</div>
+    </a>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <div class="cart-widget">
+        <i class="fa-solid fa-cart-shopping cart-icon"></i>
+        <span>My Cart: <strong><span id="cartCount">1</span> Items (<span id="cartTotal">5</span>)</strong></span>
+        <i class="fa-solid fa-chevron-down" style="font-size:.7rem;color:#aaa;"></i>
+      </div>
+      <button id="burgerBtn" style="display:none;background:none;border:none;font-size:1.3rem;cursor:pointer;color:#333;" aria-label="Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- SECONDARY NAV -->
+<nav class="nav-secondary">
+  <div class="container">
+    <a href="index.html" class="active">HOME</a>
+    <a href="category.html">PRODUCTS</a>
+    <a href="index.html#offers">SPECIAL OFFERS</a>
+    <a href="contact.html">CUSTC.</a>
+  </div>
+</nav>
+
+<!-- PRIMARY NAV -->
+<nav class="nav-primary">
+  <div class="container" style="display:flex;align-items:stretch;">
+    <div id="navLinks" style="display:flex;">
+      <a href="category.html">CATEGORY</a>
+      <a href="category.html">BRAND</a>
+      <a href="contact.html">INFO</a>
+    </div>
+    <div class="nav-search" style="flex:1;">
+      <input type="text" id="searchInput" placeholder="Search" aria-label="Search products"/>
+      <button type="button">SEARCH</button>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="category.html">CATEGORY</a>
+    <a href="category.html">BRAND</a>
+    <a href="contact.html">INFO</a>
+  </div>
+</nav>
+
+<!-- HERO SLIDER -->
+<section class="hero-slider" aria-label="Featured Products">
+  <div class="hero-slide active">
+    <div class="hero-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1200&q=80');"></div>
+    <div class="container" style="position:relative;z-index:2;width:100%;">
+      <div class="hero-slide-content">
+        <div class="hero-title">Barrier Reef 158 Jet<br>TV-Stereo · Home Theater<br>Supper Spa</div>
+        <div class="hero-sub">Extra Large and Deep · 8 Person<br>158 Jet Supper Spa, TV-Home Theater Spa System</div>
+        <div class="hero-price">$4899.00</div>
+        <a href="product.html" class="btn btn-red">More Details</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-slide">
+    <div class="hero-slide-bg" style="background-image:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&q=80');"></div>
+    <div class="container" style="position:relative;z-index:2;width:100%;">
+      <div class="hero-slide-content">
+        <div class="hero-title">Luxury 6-Person<br>TV Theater Spa<br>Premium Edition</div>
+        <div class="hero-sub">State of the art entertainment · Lounge seating<br>5.5 kW Heater · ETL Certified</div>
+        <div class="hero-price">$3599.00</div>
+        <a href="product.html" class="btn btn-red">More Details</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-dots">
+    <div class="hero-dot active"></div>
+    <div class="hero-dot"></div>
+  </div>
+</section>
+
+<!-- PROMO BANNERS -->
+<section class="promo-grid">
+  <div class="promo-card">
+    <img src="https://images.unsplash.com/photo-1596178065887-1198b6148b2b?w=500&q=80" alt="5-7 Person Spa"/>
+    <div class="promo-card-overlay">
+      <div class="promo-title">5-7 PERSON SPA</div>
+    </div>
+  </div>
+  <div class="promo-card">
+    <img src="https://images.unsplash.com/photo-1531971589569-0d9370cbe1e5?w=500&q=80" alt="TV Theater Spa"/>
+    <div class="promo-card-overlay">
+      <div class="promo-title">TV THEATER SPA</div>
+    </div>
+  </div>
+  <div class="promo-save">
+    <div class="pct">SAVE<br>50%</div>
+    <div class="label" style="font-size:.7rem;margin-top:6px;padding:0 12px;text-align:center;"></div>
+  </div>
+</section>
+
+<!-- NEW PRODUCTS -->
+<section style="background:#f5f5f5;padding:30px 0;">
+  <div class="container">
+    <div class="section-heading" style="border-bottom:2px solid #ddd;padding-bottom:8px;margin-bottom:20px;">NEW PRODUCTS</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;" id="productsGrid">
+
+      <!-- Card 1 -->
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=300&q=80" alt="XS SCYBA X SERIES 119"/>
+        <div class="product-card-body">
+          <div class="product-title">XS SCYBA X SERIES 119</div>
+          <div class="product-desc">The goods of our stores are very reliable and we care about the customer</div>
+          <div class="product-price">$500.00</div>
+        </div>
+        <div class="product-card-footer">
+          <button class="btn-add-cart"><i class="fa-solid fa-cart-shopping"></i> ADD TO CART</button>
+          <div class="product-links">
+            <a href="wishlist.html">ADD TO WISH LIST</a>
+            <a href="product.html">MORE DETAILS</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1596178065887-1198b6148b2b?w=300&q=80" alt="XS SCYBA X SERIES 119"/>
+        <div class="product-card-body">
+          <div class="product-title">XS SCYBA X SERIES 119</div>
+          <div class="product-desc">The goods of our stores are very reliable and we care about the customer</div>
+          <div class="product-price">$500.00</div>
+        </div>
+        <div class="product-card-footer">
+          <button class="btn-add-cart"><i class="fa-solid fa-cart-shopping"></i> ADD TO CART</button>
+          <div class="product-links">
+            <a href="wishlist.html">ADD TO WISH LIST</a>
+            <a href="product.html">MORE DETAILS</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1531971589569-0d9370cbe1e5?w=300&q=80" alt="XS SCYBA X SERIES 119"/>
+        <div class="product-card-body">
+          <div class="product-title">XS SCYBA X SERIES 119</div>
+          <div class="product-desc">The goods of our stores are very reliable and we care about the customer</div>
+          <div class="product-price">$500.00</div>
+        </div>
+        <div class="product-card-footer">
+          <button class="btn-add-cart"><i class="fa-solid fa-cart-shopping"></i> ADD TO CART</button>
+          <div class="product-links">
+            <a href="wishlist.html">ADD TO WISH LIST</a>
+            <a href="product.html">MORE DETAILS</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=300&q=80" alt="XS SCYBA X SET+ES 119"/>
+        <div class="product-card-body">
+          <div class="product-title">XS SCYBA X SET+ES 119</div>
+          <div class="product-desc">The goods of our stores are very reliable and we care about the customer</div>
+          <div class="product-price">$500.00</div>
+        </div>
+        <div class="product-card-footer">
+          <button class="btn-add-cart"><i class="fa-solid fa-cart-shopping"></i> ADD TO CART</button>
+          <div class="product-links">
+            <a href="wishlist.html">ADD TO WISH LIST</a>
+            <a href="product.html">MORE DETAILS</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=300&q=80" alt="XS SCYBA X SERIES 119"/>
+        <div class="product-card-body">
+          <div class="product-title">XS SCYBA X SERIES 119</div>
+          <div class="product-desc">The goods of our stores are very reliable and we care about the customer</div>
+          <div class="product-price">$500.00</div>
+        </div>
+        <div class="product-card-footer">
+          <button class="btn-add-cart"><i class="fa-solid fa-cart-shopping"></i> ADD TO CART</button>
+          <div class="product-links">
+            <a href="wishlist.html">ADD TO WISH LIST</a>
+            <a href="product.html">MORE DETAILS</a>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1596178065887-1198b6148b2b?w=300&q=80" alt="XS SCYBA X SERIES 119"/>
+        <div class="product-card-body">
+          <div class="product-title">XS SCYBA X SERIES 119</div>
+          <div class="product-desc">The goods of our stores are very reliable and we care about the customer</div>
+          <div class="product-price">$500.00</div>
+        </div>
+        <div class="product-card-footer">
+          <button class="btn-add-cart"><i class="fa-solid fa-cart-shopping"></i> ADD TO CART</button>
+          <div class="product-links">
+            <a href="wishlist.html">ADD TO WISH LIST</a>
+            <a href="product.html">MORE DETAILS</a>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1531971589569-0d9370cbe1e5?w=300&q=80" alt="XS SCYBA X SERIES 119"/>
+        <div class="product-card-body">
+          <div class="product-title">XS SCYBA X SERIES 119</div>
+          <div class="product-desc">The goods of our stores are very reliable and we care about the customer</div>
+          <div class="product-price">$500.00</div>
+        </div>
+        <div class="product-card-footer">
+          <button class="btn-add-cart"><i class="fa-solid fa-cart-shopping"></i> ADD TO CART</button>
+          <div class="product-links">
+            <a href="wishlist.html">ADD TO WISH LIST</a>
+            <a href="product.html">MORE DETAILS</a>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=300&q=80" alt="XS SCYBA X SERIES 119"/>
+        <div class="product-card-body">
+          <div class="product-title">XS SCYBA X SERIES 119</div>
+          <div class="product-desc">The goods of our stores are very reliable and we care about the customer</div>
+          <div class="product-price">$500.00</div>
+        </div>
+        <div class="product-card-footer">
+          <button class="btn-add-cart"><i class="fa-solid fa-cart-shopping"></i> ADD TO CART</button>
+          <div class="product-links">
+            <a href="wishlist.html">ADD TO WISH LIST</a>
+            <a href="product.html">MORE DETAILS</a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /grid -->
+  </div>
+</section>
+
+<!-- BRAND STRIP -->
+<div class="brand-strip">
+  <div class="container"><div class="brand-strip inner" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:36px;">
+    <div class="brand-badge">
+      <div class="save">SAVE $1,000'S</div>
+      <div class="sub">ON THE TOP SPA BRANDS</div>
+      <div class="discount">HUGE DISCOUNTS</div>
+      <div class="sub">SHOP EARLY FOR THE BEST SELECTION</div>
+    </div>
+    <div class="brand-oceanic">OCEANIC<span style="font-weight:300;">Spa</span></div>
+    <div class="brand-caldera">Caldera<span>Spas</span></div>
+    <div class="brand-island">Island<span style="font-weight:300;color:#555;">Spas</span><span class="sub">by ARTESIAN</span></div>
+  </div></div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:28px;flex-wrap:wrap;">
+      <div>
+        <h4>Contact Us</h4>
+        <p>Hotspring<br>CALL 24/7: 888 · 201 · 8899<br>Address:<br>Street<br>State &amp; Zip Code<br>City &amp; Country<br>Email: <a href="mailto:hotspring@gmail.com">hotspring@gmail.com</a></p>
+        <div class="footer-social">
+          <a href="#" class="social-btn" style="background:#38bdf8;" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-btn" style="background:#1d4ed8;" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-btn" style="background:#0284c7;" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-btn" style="background:#dc2626;" aria-label="Google+"><i class="fab fa-google-plus-g"></i></a>
+          <a href="#" class="social-btn" style="background:#b91c1c;" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="social-btn" style="background:#be185d;" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>Information</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Customer Service</a></li>
+          <li><a href="terms.html">Privacy Policy</a></li>
+          <li><a href="#">Site Map</a></li>
+          <li><a href="#">Search Terms</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>My Account</h4>
+        <ul>
+          <li><a href="login.html">Sign In</a></li>
+          <li><a href="cart.html">View Cart</a></li>
+          <li><a href="wishlist.html">My Wishlist</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Signup for a Newsletter</h4>
+        <p style="font-size:.75rem;margin-bottom:8px;">Sign up for our news letter:</p>
+        <div class="footer-newsletter">
+          <input type="email" id="footerEmail" placeholder="Your email" aria-label="Newsletter email"/>
+          <button id="footerNewsletterBtn">GO</button>
+        </div>
+        <p style="font-size:.72rem;margin-top:14px;margin-bottom:6px;color:#9ca3af;">Payment Solutions</p>
+        <div class="payment-badges">
+          <span>VISA</span><span>MC</span><span>AMEX</span><span>DISC</span><span>PayPal</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2014 Hotubspaservice.com. All Rights Reserved.</div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+$(function(){
+  // Responsive grid
+  function fixGrid(){
+    var cols = $(window).width() < 480 ? '1fr' : $(window).width() < 768 ? 'repeat(2,1fr)' : 'repeat(4,1fr)';
+    $('#productsGrid').css('grid-template-columns', cols);
+  }
+  fixGrid();
+  $(window).on('resize', fixGrid);
+
+  // Show burger on mobile
+  function checkBurger(){
+    if($(window).width() < 700){ $('#burgerBtn').show(); $('#navLinks').hide(); }
+    else { $('#burgerBtn').hide(); $('#navLinks').show(); }
+  }
+  checkBurger();
+  $(window).on('resize', checkBurger);
+});
+</script>
+</body>
+</html>
