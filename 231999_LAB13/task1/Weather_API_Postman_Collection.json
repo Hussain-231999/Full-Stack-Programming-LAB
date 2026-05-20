@@ -1,0 +1,156 @@
+{
+  "info": {
+    "name": "Weather Forecast API",
+    "description": "Collection of API endpoints for testing the Weather Forecast API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Root - API Documentation",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": [""]
+        },
+        "description": "Get API documentation and available endpoints"
+      }
+    },
+    {
+      "name": "Get Weather - London (Path Param)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/weather/London",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "weather", "London"]
+        },
+        "description": "Get current weather for London using path parameter"
+      }
+    },
+    {
+      "name": "Get Weather - Paris (Query Param)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/weather?city=Paris",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "weather"],
+          "query": [
+            {
+              "key": "city",
+              "value": "Paris"
+            }
+          ]
+        },
+        "description": "Get current weather for Paris using query parameter"
+      }
+    },
+    {
+      "name": "Get Weather - Tokyo",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/weather/Tokyo",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "weather", "Tokyo"]
+        },
+        "description": "Get current weather for Tokyo"
+      }
+    },
+    {
+      "name": "Get Weather - New York",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/weather/New York",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "weather", "New York"]
+        },
+        "description": "Get current weather for New York (city with space)"
+      }
+    },
+    {
+      "name": "Get Weather - Islamabad",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/weather/Islamabad",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "weather", "Islamabad"]
+        },
+        "description": "Get current weather for Islamabad, Pakistan"
+      }
+    },
+    {
+      "name": "Get Weather - Sydney",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/weather/Sydney",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "weather", "Sydney"]
+        },
+        "description": "Get current weather for Sydney, Australia"
+      }
+    },
+    {
+      "name": "Error - Invalid City",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/weather/InvalidCityName123",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "weather", "InvalidCityName123"]
+        },
+        "description": "Test error handling with invalid city name (should return 404)"
+      }
+    },
+    {
+      "name": "Error - Empty City Name",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/weather?city=",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "weather"],
+          "query": [
+            {
+              "key": "city",
+              "value": ""
+            }
+          ]
+        },
+        "description": "Test error handling with empty city name (should return 400)"
+      }
+    }
+  ]
+}
