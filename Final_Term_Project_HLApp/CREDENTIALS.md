@@ -1,4 +1,5 @@
-# Demo Login Credentials
+# Login Credentials
+
 ## Admin Accounts
 
 | Admin | admin1@hospital.test | Admin123! |
@@ -6,49 +7,12 @@
 
 ## Add or Change Admin Accounts
 
-Admin accounts are fixed in code and maintained by the database normalization script.
-
 To add another admin:
-
-1. Open:
-
 ```text
 server/scripts/normalizeUsers.js
 ```
 
-2. Find:
-
-```js
-const fixedAdmins = [
-```
-
-3. Add another admin object inside the array:
-
-```js
-{
-  name: "Admin Three",
-  email: "admin3@hospital.test",
-  phone: "0300-1000003",
-  password: "Admin123!"
-}
-```
-
-4. Run:
-
-```powershell
-cd "L:\AU\SEM-6\Full Stack Programming\LAB\FS_lab_project\server"
-npm.cmd run db:normalize-users
-```
-
-Important: any admin not listed in `fixedAdmins` can be removed when the normalization script runs. Do not add permanent admins directly in MongoDB Compass unless you also add them to `fixedAdmins`.
-
 ## Doctor Accounts
-
-All seeded doctor accounts use this password:
-
-```text
-SeedPass123!
-```
 
 | Doctor | Email | Password |
 |---|---|---|
@@ -69,12 +33,6 @@ SeedPass123!
 | Dr. Zainab Shah | zainab.shah.doctor@hospital.test | SeedPass123! |
 
 ## Patient Accounts
-
-All seeded patient accounts use this password:
-
-```text
-SeedPass123!
-```
 
 | Patient | Email | Password |
 |---|---|---|
