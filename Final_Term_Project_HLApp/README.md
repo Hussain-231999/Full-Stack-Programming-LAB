@@ -1,4 +1,4 @@
-# Healthcare Appointment System
+# Healthcare Appointment System | Hussain Abdullah - 231999 - BSSE-F23-A
 
 Full-stack web application for secure online doctor appointment booking and continuous patient treatment tracking.
 
